@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+<h1 class="text-center mb-4 text-primary"  >STUDENT LIST</h1>
+             <div class="mb-3 text-end">
+                <a href="{% url 'add_student' %}" class="btn btn-success">
+                    <i class="fas fa-plus"></i> Add Student
+                </a>
+            </div>
+
+<table class="table table-bordered table-striped ">
+    <thead class="table-dark">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>AGE</th>
+        <TH>COURSE</TH>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+    <tr>
+        <td>{{student.id}}</td>
+        <td>{{student.fullname}}</td>
+        <td>{{student.age}}</td>
+        <td>{{student.course}}</td>
+        <td>
+            <a href="{% url 'update_student' student.id %}"class=" btn btn-primary">UPDATE</a>
+            <a  href="{% url 'delete_student'  student.id %}"class="btn btn-danger">DELETE</a>
+
+        </td>
+    </tr>
+    {%endfor%}
+    </tbody>
+
+</table>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
