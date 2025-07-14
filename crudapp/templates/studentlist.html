@@ -5,9 +5,11 @@
         <div class="col-md-10">
 <h1 class="text-center mb-4 text-primary"  >STUDENT LIST</h1>
              <div class="mb-3 text-end">
+                  {%if user.is_staff %}
                 <a href="{% url 'add_student' %}" class="btn btn-success">
                     <i class="fas fa-plus"></i> Add Student
                 </a>
+                 {%endif%}
             </div>
 
 <table class="table table-bordered table-striped ">
@@ -28,9 +30,12 @@
         <td>{{student.age}}</td>
         <td>{{student.course}}</td>
         <td>
+            {%if user.is_staff %}
             <a href="{% url 'update_student' student.id %}"class=" btn btn-primary">UPDATE</a>
             <a  href="{% url 'delete_student'  student.id %}"class="btn btn-danger">DELETE</a>
-
+            {%else%}
+            <span>view only</span>
+            {%endif%}
         </td>
     </tr>
     {%endfor%}

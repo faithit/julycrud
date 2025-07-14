@@ -8,9 +8,24 @@ class  StudentForm(forms.ModelForm):
         model = Student
         fields = ['fullname','age' ,'course']
         widgets = {
-            'fullname': forms.TextInput(attrs={'class': 'form-control'}),
-            'age': forms.NumberInput(attrs={'class': 'form-control'}),
+            'fullname': forms.TextInput(attrs={'class': 'form-control '}),
+            'age': forms.NumberInput(attrs={'class': 'form-control ' }),
             'course': forms.TextInput(attrs={'class': 'form-control'}),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
 
