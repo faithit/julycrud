@@ -1,4 +1,4 @@
-# Django Student CRUD Project with forms.py and Explanations
+# Django Student CRUD Project
 
 ## 📁 templates/base.html
 ```html
