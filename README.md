@@ -1,5 +1,5 @@
-
-A simple Django CRUD application.
+# JulyCRUD Project
+A  Django CRUD application.
 
 ---
 
