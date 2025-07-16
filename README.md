@@ -1,4 +1,3 @@
-# JulyCRUD Project
 
 A simple Django CRUD application.
 
@@ -7,6 +6,7 @@ A simple Django CRUD application.
 ## 📚 Documentation & Guides
 
 - [XAMPP Installation & Usage Guide for Linux](./XAMPP-guide.md)
+- [Django Student CRUD Project Notes](./notes.md)
 
 ---
 
@@ -41,7 +41,7 @@ python manage.py migrate
 
 ---
 
-## 🔄 Django CRUD(Create, Read, Update, Delete) Example: Student Model
+## 🔄 Django CRUD Example: Student Model
 
 CRUD operations are fundamental in web applications for managing data.
 
@@ -93,5 +93,6 @@ python manage.py migrate
 
 - [Django Documentation](https://docs.djangoproject.com/)
 - [XAMPP Installation & Usage Guide](./XAMPP-guide.md)
+- [Django Student CRUD Project Notes](./notes.md)
 
 ---
