@@ -80,17 +80,91 @@ sudo /opt/lampp/manager-linux-x64.run
 - Enter your **Database Name** and click **Create**.
 
 ---
+# ✅ Connecting Django CRUD Project to XAMPP MySQL Database
 
-## ✅ Summary of Key Commands
+### 1️⃣ **Database Settings in `settings.py`**
 
-| Action              | Command                                 |
-| ------------------- | --------------------------------------- |
-| Start XAMPP         | `sudo /opt/lampp/lampp start`           |
-| Stop XAMPP          | `sudo /opt/lampp/lampp stop`            |
-| Restart XAMPP       | `sudo /opt/lampp/lampp restart`         |
-| XAMPP Control Panel | `sudo /opt/lampp/manager-linux-x64.run` |
+Replace the default `DATABASES` settings with:
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'your_database_name',
+        'USER': 'root',
+        'PASSWORD': '',  # Empty if you haven't set a password
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
 
 ---
 
-*You are now ready to connect your Django project to MySQL using XAMPP!*
+### 2️⃣ **Install MySQL Client Library for Django**
 
+In your virtual environment:
+
+```bash
+pip install mysqlclient
+```
+
+If you get errors, install system dependencies:
+
+```bash
+sudo apt-get install libmysqlclient-dev
+```
+
+---
+
+### 3️⃣ **Make and Apply Migrations**
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+---
+
+### 4️⃣ **Run Django Server and Test Connection**
+
+```bash
+python manage.py runserver
+```
+
+Check your terminal for successful connection and test CRUD operations.
+
+---
+
+### 5️⃣ **If You Get MariaDB Not Supported Error**
+
+If you see this error:
+
+```
+django.db.utils.NotSupportedError: MariaDB 10.5 or later is required
+```
+
+Downgrade Django to **version 4.2 LTS**:
+
+```bash
+pip uninstall django
+pip install django==4.2
+```
+
+---
+
+## ✅ Summary of Key Commands
+
+| Action                  | Command                                 |
+| ----------------------- | --------------------------------------- |
+| Start XAMPP             | `sudo /opt/lampp/lampp start`           |
+| Stop XAMPP              | `sudo /opt/lampp/lampp stop`            |
+| Restart XAMPP           | `sudo /opt/lampp/lampp restart`         |
+| XAMPP Control Panel     | `sudo /opt/lampp/manager-linux-x64.run` |
+| Install mysqlclient     | `pip install mysqlclient`               |
+| Apply Django Migrations | `python manage.py migrate`              |
+| Install Django 4.2      | `pip install django==4.2`               |
+
+---
+
+*You are now ready to connect your Django CRUD project to MySQL using XAMPP!*
