@@ -17,7 +17,7 @@
 </html>
 ```
 
-## 📁 templates/students/student_list.html
+## 📁 templates/student_list.html
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -49,7 +49,7 @@
 {% endblock %}
 ```
 
-## 📁 templates/students/student_form.html
+## 📁 templates/student_form.html
 ```html
 {% extends 'base.html' %}
 {% block content %}
